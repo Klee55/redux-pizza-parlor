@@ -1,0 +1,19 @@
+.list-container {
+  background-color: rgb(227, 102, 102);
+  border: 1px solid black;
+}
+
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: auto;
+}
+
+th, td {
+  height: 50px;
+  vertical-align: bottom;
+  padding: 5px;
+}

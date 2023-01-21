@@ -1,6 +1,6 @@
 # React Pizza Parlor
 
-Before you get started make sure to read through **ALL** requirements and outline a plan for your group. Assign out tasks and use branches to allow team members to work in parallel.
+x- Before you get started make sure to read through **ALL** requirements and outline a plan for your group. Assign out tasks and use branches to allow team members to work in parallel.
 
 ### Setup
 
