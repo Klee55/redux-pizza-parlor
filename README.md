@@ -4,7 +4,7 @@ x- Before you get started make sure to read through **ALL** requirements and out
 
 ### Setup
 
-Server side code for baseline functionality has been provided for you. Each member of your team will need to create a `pizza_parlor` database.
+x - Server side code for baseline functionality has been provided for you. Each member of your team will need to create a `pizza_parlor` database.
 
 **Import data**
 
