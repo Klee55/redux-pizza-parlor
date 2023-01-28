@@ -1,14 +1,13 @@
-import './PizzaList.css'
+import './PizzaList.css';
+// import axios from 'axios';
 
-function PizzaList({ pizzaListProp }) {
+import { useSelector } from 'react-redux';
 
-    
-    const addPizza = (pizzaToAdd) => {
-        console.log(pizzaToAdd);
-    }
+function PizzaList() {
+    const pizzaList = useSelector(store => store.pizzaList);
 
     return (
-        <>
+        <section>
             <h1>PizzaList component here!</h1>
             <table className="list-container">
                 <thead>
@@ -19,18 +18,25 @@ function PizzaList({ pizzaListProp }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {pizzaListProp.map(pizza => (
+                    {pizzaList.map((pizza, index) => (
                         // move into component 
-                        <tr key={pizza.id}>
+                        <tr key={index}>
                             <td>{pizza.name}</td>
                             <td>{pizza.description}</td>
                             <td>{pizza.price}</td>
-                            <td><button onClick={() => addPizza(pizza)}>Add</button></td>
+                            <td><button onClick={() => dispatch({
+                                type: 'ADD_PIZZA',
+                                payload: response.data
+                            })}>
+                                Add
+                            </button>
+                                <button>Remove</button></td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-        </>
+        </section>
     )
 }
+
 export default PizzaList;
