@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/App/App';
+import App from './components/App/App.jsx';
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import logger from "redux-logger";
@@ -20,17 +20,25 @@ const pizzaList = (state = ['pizza', 'anotha pizza', 'anchovyðŸ¤¢', 'pineappleðŸ
 }
 // End of Reducer PizzaList
 
-// const REDUCER_NAME2 = (state = [], action) => {
-//     console.log('in da second reducer', state)
+const addPizza = (state = [], action) => {
+    console.log('in addPizza reducer', state);
+    if (action.type === "ADD_PIZZA") {
+        console.log(action.payload);
+        
+        // return array instead of one object
+        return [...state, action.payload];
+        
+    }
+    return state;
 
-// }
+}
 
 // Redux Store - Front End DataBase
 const storeInstance = createStore(
 
     combineReducers({
         pizzaList,
-        // REDUCER_NAME2
+        addPizza
     }),
     applyMiddleware(logger)
 

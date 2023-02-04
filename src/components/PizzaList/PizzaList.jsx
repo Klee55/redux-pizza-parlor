@@ -1,10 +1,14 @@
 import './PizzaList.css';
 // import axios from 'axios';
+import { useDispatch } from 'react-redux'
 
 import { useSelector } from 'react-redux';
 
+
 function PizzaList() {
     const pizzaList = useSelector(store => store.pizzaList);
+    
+    const dispatch = useDispatch();
 
     return (
         <section>
@@ -24,13 +28,16 @@ function PizzaList() {
                             <td>{pizza.name}</td>
                             <td>{pizza.description}</td>
                             <td>{pizza.price}</td>
-                            <td><button onClick={() => dispatch({
+                            <td>
+                                <button onClick={() => dispatch({
                                 type: 'ADD_PIZZA',
-                                payload: response.data
+                                payload: pizza
                             })}>
                                 Add
-                            </button>
-                                <button>Remove</button></td>
+                                </button>
+                                <button>Remove</button>
+                                
+                            </td>
                         </tr>
                     ))}
                 </tbody>

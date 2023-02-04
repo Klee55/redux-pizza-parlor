@@ -5,9 +5,15 @@ import './App.css';
 import PizzaList from '../PizzaList/PizzaList.jsx'
 import { useDispatch } from 'react-redux'
 
+import Cart from '../Cart/Cart.jsx';
+
 
 // Start of App
 function App() {
+
+  
+
+  // console.log(addPizza);
 
 
   // const [pizzaList, setPizzaList] = useState([]);
@@ -35,13 +41,22 @@ function App() {
   }
 
 
+  // add header to cart.. create a componenet mayvbe?
 
   return (
     <div className='App'>
+
+
       <header className='App-header'>
         <h1
           className='App-title'>Prime Pizza
-          <button className='total-price'>Cart</button> </h1>
+           
+          {/* onclick attached to cart component
+          or
+          conditional rendering maybe with ternary operator
+          */}
+        </h1>
+        <Cart />
       </header>
 
       <img src='images/pizza_photo.png' />
